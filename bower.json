@@ -1,12 +1,15 @@
 {
   "name": "angular-route-wizard",
-  "version": "0.0.1.beta",
+  "dependencies": {
+    "angular": "~1.2.16"
+  },
+  "version": "0.0.1-beta.1",
   "authors": [
     "William Boman <william@redwill.se>"
   ],
   "description": "Angular module that makes it easier to work with ngRoute.",
-  "homepage": "https://github.com/williamboman/ngroutewizard",
-  "main": "dist/ngRouteWizard.js",
+  "homepage": "https://github.com/williamboman/angular-route-wizard",
+  "main": "dist/ngRouteWizard.min.js",
   "keywords": [
     "angular",
     "ngroute"
