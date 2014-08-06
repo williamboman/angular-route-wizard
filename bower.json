@@ -1,0 +1,22 @@
+{
+  "name": "angular-route-wizard",
+  "version": "0.0.1.beta",
+  "authors": [
+    "William Boman <william@redwill.se>"
+  ],
+  "description": "Angular module that makes it easier to work with ngRoute.",
+  "homepage": "https://github.com/williamboman/ngroutewizard",
+  "main": "dist/ngRouteWizard.js",
+  "keywords": [
+    "angular",
+    "ngroute"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
