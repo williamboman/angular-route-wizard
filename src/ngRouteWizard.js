@@ -91,25 +91,27 @@
     }
   ]);
 
-  module.directive('wizRoute', function (urlWizard, $location) {
-    return {
-      restrict: 'A',
-      link: function (scope, element, attr) {
-        var wizRoute = attr.wizRoute,
-            wizParams = attr.wizParams,
-            params;
+  module.directive('wizRoute', ['urlWizard', '$location',
+    function (urlWizard, $location) {
+      return {
+        restrict: 'A',
+        link: function (scope, element, attr) {
+          var wizRoute = attr.wizRoute,
+              wizParams = attr.wizParams,
+              params;
 
-        if( typeof wizParams !== 'undefined' ) {
-          try {
-            params = JSON.parse(wizParams);
-          } catch( e ) {
-            throw new Error('[wb.ngRouteWizard] Could not parse wiz-params. [' + wizParams + ']');
+          if( typeof wizParams !== 'undefined' ) {
+            try {
+              params = JSON.parse(wizParams);
+            } catch( e ) {
+              throw new Error('[wb.ngRouteWizard] Could not parse wiz-params. [' + wizParams + ']');
+            }
           }
-        }
 
-        element[0].href = ( !$location.$$html5 ? '#/' : '' ) + urlWizard.to(wizRoute, params);
-      }
-    };
-  });
+          element[0].href = ( !$location.$$html5 ? '#/' : '' ) + urlWizard.to(wizRoute, params);
+        }
+      };
+    }
+  ]);
 
 })(window.angular);
