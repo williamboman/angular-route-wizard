@@ -96,19 +96,26 @@
       return {
         restrict: 'A',
         link: function (scope, element, attr) {
-          var wizRoute = attr.wizRoute,
-              wizParams = attr.wizParams,
-              params;
+          op();
 
-          if( typeof wizParams !== 'undefined' ) {
-            try {
-              params = JSON.parse(wizParams);
-            } catch( e ) {
-              throw new Error('[wb.ngRouteWizard] Could not parse wiz-params. [' + wizParams + ']');
+          attr.$observe('wizRoute', op);
+          attr.$observe('wizParams', op);
+
+          function op() {
+            var wizRoute = attr.wizRoute,
+                wizParams = attr.wizParams,
+                params;
+
+            if( typeof wizParams !== 'undefined' ) {
+              try {
+                params = JSON.parse(wizParams);
+              } catch( e ) {
+                throw new Error('[wb.ngRouteWizard] Could not parse wiz-params. [' + wizParams + ']');
+              }
             }
-          }
 
-          element[0].href = ( !$location.$$html5 ? '#/' : '' ) + urlWizard.to(wizRoute, params);
+            element.attr('href', ( !$location.$$html5 ? '#/' : '/' ) + urlWizard.to(wizRoute, params));
+          }
         }
       };
     }

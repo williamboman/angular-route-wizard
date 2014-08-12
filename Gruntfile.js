@@ -7,10 +7,13 @@ module.exports = function (grunt) {
   require('time-grunt')(grunt);
 
   grunt.initConfig({
-    bowerPkg: grunt.file.readJSON('bower.json'),
+    meta: {
+      bower: grunt.file.readJSON('bower.json'),
+      banner: '/*\n\t<%= meta.bower.name %> v<%= meta.bower.version %>\n\t<%= meta.bower.homepage %>\n\n\t(c) <%= grunt.template.today("yyyy") %> <%= meta.bower.authors.join("- ") %>\n*/\n'
+    },
     jshint: {
       options: {
-        jshintrc: './.jshintrc',
+        jshintrc: '.jshintrc',
         reporter: require('jshint-stylish'),
         ignores: [
           'dist/'
@@ -22,12 +25,35 @@ module.exports = function (grunt) {
       ]
     },
     uglify: {
-      options: {
-        banner: '/*\n\t<%= bowerPkg.name %> v<%= bowerPkg.version %>\n\t<%= bowerPkg.homepage %>\n\n\t(c) <%= grunt.template.today("yyyy") %> <%= bowerPkg.authors.join("- ") %>\n*/\n\n'
-      },
       dist: {
         files: {
-          'dist/ngRouteWizard.min.js': 'src/ngRouteWizard.js'
+          'dist/angular-route-wizard.min.js': 'dist/angular-route-wizard.js'
+        }
+      }
+    },
+    clean: {
+      dist: ['dist/']
+    },
+    copy: {
+      dist: {
+        files: [
+          {
+            expand: true,
+            cwd: 'src/',
+            src: ['angular-route-wizard.js'],
+            dest: 'dist/'
+          }
+        ]
+      }
+    },
+    usebanner: {
+      dist: {
+        options: {
+          position: 'top',
+          banner: '<%= meta.banner %>'
+        },
+        files: {
+          src: ['dist/**.*js']
         }
       }
     }
@@ -39,6 +65,9 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'jshint:all',
-    'uglify:dist'
+    'clean:dist',
+    'copy:dist',
+    'uglify:dist',
+    'usebanner:dist'
   ]);
 };
