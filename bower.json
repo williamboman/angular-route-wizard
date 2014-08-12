@@ -1,18 +1,22 @@
 {
   "name": "angular-route-wizard",
+  "description": "Angular module that makes it easier to work with ngRoute.",
+  "homepage": "https://github.com/williamboman/angular-route-wizard",
   "dependencies": {
     "angular": "~1.2.16"
   },
-  "version": "0.0.1-beta.2",
   "authors": [
-    "William Boman <william@redwill.se>"
+    {
+      "name": "William Boman",
+      "email": "william@redwill.se",
+      "url": "http://william.redwill.se"
+    }
   ],
-  "description": "Angular module that makes it easier to work with ngRoute.",
-  "homepage": "https://github.com/williamboman/angular-route-wizard",
   "main": "dist/angular-route-wizard.js",
   "keywords": [
     "angular",
-    "ngroute"
+    "ngroute",
+    "wizard"
   ],
   "license": "MIT",
   "ignore": [

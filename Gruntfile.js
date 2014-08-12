@@ -8,8 +8,8 @@ module.exports = function (grunt) {
 
   grunt.initConfig({
     meta: {
-      bower: grunt.file.readJSON('bower.json'),
-      banner: '/*\n\t<%= meta.bower.name %> v<%= meta.bower.version %>\n\t<%= meta.bower.homepage %>\n\n\t(c) <%= grunt.template.today("yyyy") %> <%= meta.bower.authors.join("- ") %>\n*/\n'
+      pkg: grunt.file.readJSON('package.json'),
+      banner: '/*\n\t<%= meta.pkg.name %> v<%= meta.pkg.version %>\n\t<%= meta.pkg.homepage %>\n\n\t(c) <%= grunt.template.today("yyyy") %> <%= meta.pkg.author.name %> <<%= meta.pkg.author.email %>> (<%= meta.pkg.author.url %>)\n*/\n'
     },
     jshint: {
       options: {

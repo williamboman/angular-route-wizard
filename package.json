@@ -1,6 +1,22 @@
 {
   "name": "angular-route-wizard",
-  "dependencies": {},
+  "description": "Angular module that makes it easier to work with ngRoute.",
+  "homepage": "https://github.com/williamboman/angular-route-wizard",
+  "author": {
+    "name": "William Boman",
+    "email": "william@redwill.se",
+    "url": "http://william.redwill.se"
+  },
+  "main": "dist/angular-route-wizard.js",
+  "keywords": [
+    "angular",
+    "ngroute",
+    "wizard"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "angular": "~1.2.16"
+  },
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-banner": "^0.2.3",
