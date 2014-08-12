@@ -2,6 +2,7 @@
   "name": "angular-route-wizard",
   "description": "Angular module that makes it easier to work with ngRoute.",
   "homepage": "https://github.com/williamboman/angular-route-wizard",
+  "version": "0.0.1",
   "author": {
     "name": "William Boman",
     "email": "william@redwill.se",
