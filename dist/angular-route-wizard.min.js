@@ -1,5 +1,5 @@
 /*
-	angular-route-wizard v0.0.1
+	angular-route-wizard v0.0.2
 	https://github.com/williamboman/angular-route-wizard
 
 	(c) 2014 William Boman <william@redwill.se> (http://william.redwill.se)
