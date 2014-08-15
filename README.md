@@ -12,8 +12,8 @@ Angular module that makes `ngRoute` easier to work with.
 bower install angular-route-wizard --save
 ```
 ### Download
-- [angular-route-wizard.min.js](https://github.com/williamboman/angular-route-wizard/releases/download/v0.0.1/angular-route-wizard.min.js)
-- [angular-route-wizard.js](https://github.com/williamboman/angular-route-wizard/releases/download/v0.0.1/angular-route-wizard.js)
+- [angular-route-wizard.min.js](https://github.com/williamboman/angular-route-wizard/releases/download/v0.0.2/angular-route-wizard.min.js)
+- [angular-route-wizard.js](https://github.com/williamboman/angular-route-wizard/releases/download/v0.0.2/angular-route-wizard.js)
 
 Then simply just include the JavaScript file in your document!
 
