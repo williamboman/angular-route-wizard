@@ -34,18 +34,6 @@ module.exports = function (grunt) {
     clean: {
       dist: ['dist/']
     },
-    copy: {
-      dist: {
-        files: [
-          {
-            expand: true,
-            cwd: 'src/',
-            src: ['angular-route-wizard.js'],
-            dest: 'dist/'
-          }
-        ]
-      }
-    },
     usebanner: {
       dist: {
         options: {
@@ -55,6 +43,12 @@ module.exports = function (grunt) {
         files: {
           src: ['dist/**.*js']
         }
+      }
+    },
+    concat: {
+      dist: {
+        src: ['src/services.js', 'src/directives.js', 'src/bootstrap.js'],
+        dest: 'dist/angular-route-wizard.js'
       }
     }
   });
@@ -66,7 +60,7 @@ module.exports = function (grunt) {
   grunt.registerTask('build', [
     'jshint:all',
     'clean:dist',
-    'copy:dist',
+    'concat:dist',
     'uglify:dist',
     'usebanner:dist'
   ]);

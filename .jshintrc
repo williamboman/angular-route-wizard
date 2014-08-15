@@ -16,5 +16,8 @@
   "strict": true,
   "trailing": true,
   "smarttabs": true,
-  "newcap": false
+  "newcap": false,
+  "globals": {
+    "angular": false
+  }
 }
