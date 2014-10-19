@@ -3,7 +3,7 @@
   "description": "Angular module that makes it easier to work with ngRoute.",
   "homepage": "https://github.com/williamboman/angular-route-wizard",
   "dependencies": {
-    "angular": "~1.2.16"
+    "angular": "1.*"
   },
   "authors": [
     {
